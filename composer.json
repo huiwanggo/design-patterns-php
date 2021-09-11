@@ -1,0 +1,19 @@
+{
+    "name": "huiwang/design-patterns",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DesignPatterns\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "huiwang",
+            "email": "huiwanggo@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^8.4"
+    }
+}
