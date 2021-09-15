@@ -1,20 +1,26 @@
 <?php
 
-use DesignPatterns\Creational\FactoryMethod\ConcreteCreator1;
-use DesignPatterns\Creational\FactoryMethod\ConcreteCreator2;
+use DesignPatterns\Creational\FactoryMethod\FileLogger;
+use DesignPatterns\Creational\FactoryMethod\FileLoggerFactory;
+use DesignPatterns\Creational\FactoryMethod\StdoutLogger;
+use DesignPatterns\Creational\FactoryMethod\StdoutLoggerFactory;
 use PHPUnit\Framework\TestCase;
 
 class FactoryMethodTest extends TestCase
 {
-    public function testRun()
+    public function testCanCreateStdoutLogger()
     {
-        $creator1 = new ConcreteCreator1();
-        $product1 = $creator1->factoryMethod();
+        $loggerFactory = new StdoutLoggerFactory();
+        $logger = $loggerFactory->createLogger();
 
-        $this->assertEquals('{Result of the ConcreteProduct1}', $product1->operation());
+        $this->assertInstanceOf(StdoutLogger::class, $logger);
+    }
 
-        $creator2 = new ConcreteCreator2();
-        $product2 = $creator2->factoryMethod();
-        $this->assertEquals('{Result of the ConcreteProduct2}', $product2->operation());
+    public function testCanCreateFileLogger()
+    {
+        $loggerFactory = new FileLoggerFactory($filePath = '');
+        $logger = $loggerFactory->createLogger();
+
+        $this->assertInstanceOf(FileLogger::class, $logger);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace DesignPatterns\Creational\FactoryMethod1;
+namespace DesignPatterns\Creational\FactoryMethod;
 
 class FileLoggerFactory implements LoggerFactory
 {
