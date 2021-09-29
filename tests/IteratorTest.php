@@ -5,7 +5,7 @@ use DesignPatterns\Behavioral\Iterator\Data;
 use DesignPatterns\Behavioral\Iterator\PageIterator;
 use PHPUnit\Framework\TestCase;
 
-class DataTest extends TestCase
+class IteratorTest extends TestCase
 {
     public function testPage()
     {
